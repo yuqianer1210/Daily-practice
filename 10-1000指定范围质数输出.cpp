@@ -3,20 +3,23 @@
 
 int main()
 {
-	int a,b,m,temp,count = 1;
+	int a,b,m,n,i,count = 1;
 	do
 	{
-		printf("请输入两个规定范围内的正整数！\n");
+		printf("璇疯緭鍏ヤ袱涓瀹氳寖鍥村唴鐨勬鏁存暟锛乗n");
 		scanf_s("%d%d", &a,&b);
 	} while (a<10||a>b||b>1000);
-	for (;a<=b;a++)
+	for (i = a; i <= b; i++)
 	{
-		m = sqrt(a);
-		if (a%m)
-			continue;
-		else
+		m = sqrt(i);
+		for (n = 2; n <= m; n++)
 		{
-			printf("%d ", a);
+			if (i%n == 0)
+				break;
+		}
+		if (n > m)
+		{
+			printf("%d ", i);
 			if (count % 5 == 0)
 				printf("\n");
 			count++;
